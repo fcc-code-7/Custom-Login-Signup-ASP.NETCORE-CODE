@@ -1,0 +1,82 @@
+﻿@using Altivix.Web.ViewModel
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+
+}
+<div class="vertical-layout vertical-menu-modern 1-column bg-full-screen-image">
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <section class="row flexbox-container">
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
+                            <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                                <div class="card-header border-0">
+                                    <div class="card-title text-center">
+                                        <img src="~/app-assets/images/logo/stack-logo-dark.png" alt="branding logo">
+                                    </div>
+                             
+                                </div>
+                                <div class="card-content">
+                                   
+                                 
+                                    <div class="card-body">
+                                        <form asp-action="Login" method="post" class="form-horizontal">
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input asp-for="Email" class="form-control" placeholder="Your Email" required>
+                                                <div class="form-control-position">
+                                                    <i class="feather icon-mail"></i>
+                                                </div>
+                                                <span asp-validation-for="Email" class="text-danger"></span>
+                                            </fieldset>
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input asp-for="Password" type="password" class="form-control" placeholder="Enter Password" required>
+                                                <div class="form-control-position">
+                                                    <i class="fa fa-key"></i>
+                                                </div>
+                                                <span asp-validation-for="Password" class="text-danger"></span>
+                                            </fieldset>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-12 text-center text-sm-left pr-0">
+                                                    <fieldset>
+                                                        <input type="checkbox" asp-for="RememberMe" class="chk-remember">
+                                                        <label asp-for="RememberMe"> Remember Me</label>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right">
+                                                    <a href="recover-password.html" class="card-link">Forgot Password?</a>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-outline-primary btn-block">
+                                                <i class="feather icon-unlock"></i> Login
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1">
+                                        <span>
+                                            New to
+                                            Stack?
+                                        </span>
+                                    </p>
+                                    <div class="card-body">
+                                        <a href="register-with-bg-image.html" class="btn btn-outline-danger btn-block">
+                                            <i class="feather icon-user"></i> Register
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,91 @@
+﻿@using Altivix.Web.ViewModel
+@model RegisterViewModel 
+@{
+    ViewData["Title"] = "Register";
+}
+<div class="vertical-layout vertical-menu-modern 1-column bg-full-screen-image">
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <section class="row flexbox-container">
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <div class="col-lg-5 col-md-9 col-11 box-shadow-2 p-0">
+                            <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                                <div class="card-header border-0">
+                                    <div class="card-title text-center">
+                                        <img src="~/app-assets/images/logo/stack-logo-dark.png" alt="branding logo">
+                                    </div>
+
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <form asp-action="Register" method="post" class="form-horizontal">
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input asp-for="Name" class="form-control" placeholder="Your Name" required>
+                                                <div class="form-control-position">
+                                                    <i class="fa fa-user"></i>
+                                                </div>
+                                                <span asp-validation-for="Name" class="text-danger"></span>
+                                            </fieldset>
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input asp-for="Email" class="form-control" placeholder="Your Email" required>
+                                                <div class="form-control-position">
+                                                    <i class="feather icon-mail"></i>
+                                                </div>
+                                                <span asp-validation-for="Email" class="text-danger"></span>
+                                            </fieldset>
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input asp-for="Password" type="password" class="form-control" placeholder="Enter Password" required>
+                                                <div class="form-control-position">
+                                                    <i class="fa fa-key"></i>
+                                                </div>
+                                                <span asp-validation-for="Password" class="text-danger"></span>
+                                            </fieldset>
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Enter Confirm Password" required>
+                                                <div class="form-control-position">
+                                                    <i class="fa fa-key"></i>
+                                                </div>
+                                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                            </fieldset>
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input asp-for="Company" class="form-control" placeholder="Your Company" required>
+                                                <div class="form-control-position">
+                                                    <i class="fa fa-briefcase"></i>
+                                                </div>
+                                                <span asp-validation-for="Company" class="text-danger"></span>
+                                            </fieldset>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-12 text-center text-sm-left pr-0">
+                                                    <fieldset>
+                                                        <input type="checkbox" asp-for="IsDisabled" class="chk-remember">
+                                                        <label asp-for="IsDisabled"> IsDisabled</label>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-outline-primary btn-block">
+                                                <i class="feather icon-unlock"></i> Register
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="register-with-bg-image.html" class="btn btn-outline-danger btn-block">
+                                            <i class="feather icon-user"></i> Login
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
