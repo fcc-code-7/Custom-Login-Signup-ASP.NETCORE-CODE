@@ -1,0 +1,15 @@
+D:\Professional\Office\Altivix\Altivix.Entities\bin\Debug\net8.0\Altivix.Entities.deps.json
+D:\Professional\Office\Altivix\Altivix.Entities\bin\Debug\net8.0\Altivix.Entities.runtimeconfig.json
+D:\Professional\Office\Altivix\Altivix.Entities\bin\Debug\net8.0\Altivix.Entities.dll
+D:\Professional\Office\Altivix\Altivix.Entities\bin\Debug\net8.0\Altivix.Entities.pdb
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\Altivix.Entities.csproj.AssemblyReference.cache
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\Altivix.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\Altivix.Entities.AssemblyInfoInputs.cache
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\Altivix.Entities.AssemblyInfo.cs
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\Altivix.Entities.csproj.CoreCompileInputs.cache
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\Altivix.Entities.sourcelink.json
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\Altivix.Entities.dll
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\refint\Altivix.Entities.dll
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\Altivix.Entities.pdb
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\Altivix.Entities.genruntimeconfig.cache
+D:\Professional\Office\Altivix\Altivix.Entities\obj\Debug\net8.0\ref\Altivix.Entities.dll

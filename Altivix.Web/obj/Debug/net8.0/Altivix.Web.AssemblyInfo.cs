@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Altivix.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+442664fe0e6f5fb9ea01af2c0786878b5e96cbd4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Altivix.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Altivix.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

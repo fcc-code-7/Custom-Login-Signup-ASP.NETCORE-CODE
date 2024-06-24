@@ -1,0 +1,116 @@
+﻿        @using Altivix.Web.ViewModel
+        @model RegisterViewModel
+@{
+    ViewData["Title"] = "Add Employee";
+}
+
+
+
+
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-2">
+                <h3 class="content-header-title mb-0">Horizontal Forms</h3>
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">Form Layouts</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <a href="#">Horizontal Forms</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <section id="horizontal-form-layouts">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="horz-layout-basic">Add Employee</h4>
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                            </div>
+                            <div class="card-content collpase show">
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <form class="form form-horizontal" method="post" asp-action="AddEmployee" asp-controller="Admin">
+                                            <div class="form-body">
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="projectinput1">Name</label>
+                                                    <div class="col-md-9">
+                                                        <input asp-for="Name" type="text" id="projectinput1" class="form-control" placeholder="Name">
+                                                    </div>
+                                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="projectinput3">E-mail</label>
+                                                    <div class="col-md-9">
+                                                        <input asp-for="Email" type="text" id="projectinput3" class="form-control" placeholder="E-mail">
+                                                    </div>
+                                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="projectinput4">Password</label>
+                                                    <div class="col-md-9">
+                                                        <input asp-for="Password" type="password" id="projectinput4" class="form-control" placeholder="Phone">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="projectinput4">Confirm Password</label>
+                                                    <div class="col-md-9">
+                                                        <input asp-for="ConfirmPassword" type="password" id="projectinput4" class="form-control" placeholder="Phone">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="projectinput5">Company</label>
+                                                    <div class="col-md-9">
+                                                        <input asp-for="Company" type="text" id="projectinput5" class="form-control" placeholder="Company Name">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="IsDisabled">IsDisabled</label>
+                                                    <div class="col-md-9">
+                                                        <input id="IsDisabled" type="checkbox" class="chk-remember">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions ">
+                                                <button type="button" class="btn btn-warning mr-1 ">
+                                                    <i class="feather icon-x"></i> Reset
+                                                </button>
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="fa fa-check-square-o"></i> Save
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>

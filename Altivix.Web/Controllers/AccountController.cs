@@ -1,4 +1,5 @@
-﻿using Altivix.Web.Models;
+﻿using Altivix.Web.Constants;
+using Altivix.Web.Models;
 using Altivix.Web.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -24,21 +25,46 @@ namespace Altivix.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Email!,model.Password!,model.RememberMe, false);
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    var user = await _userManager.FindByEmailAsync(model.Email);
+                    if (user != null)
+                    {
+                        var roles = await _userManager.GetRolesAsync(user);
+                        if (roles.Contains("Client"))
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
+                        else if (roles.Contains("Admin"))
+                        {
+                            return RedirectToAction("AddEmployee", "Admin");
+                        }
+                        else if (roles.Contains("Employee"))
+                        {
+                            return RedirectToAction("EmployeeDashboard", "Employee");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Invalid user role.");
+                            return View(model);
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Invalid Login Attempt");
+                        return View(model);
+                    }
                 }
                 ModelState.AddModelError("", "Invalid Login Attempt");
-                return View(model);
             }
             return View(model);
         }
+
         public IActionResult Register()
         {
             return View();
         }
-        [HttpPost]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
@@ -57,7 +83,7 @@ namespace Altivix.Web.Controllers
 
                 if (result.Succeeded)
                 {
-                    // Optionally send an email confirmation token here if required
+                    await _userManager.AddToRoleAsync(user, Roles.Client.ToString());
                     await _signInManager.SignInAsync(user, false);
                     return RedirectToAction("Index", "Home");
                 }
@@ -68,18 +94,6 @@ namespace Altivix.Web.Controllers
                         ModelState.AddModelError("", error.Description);
                         // Log the error for debugging
                         Console.WriteLine($"Error: {error.Description}");
-                    }
-                }
-            }
-            else
-            {
-                // Log model state errors
-                foreach (var key in ModelState.Keys)
-                {
-                    var errors = ModelState[key].Errors;
-                    foreach (var error in errors)
-                    {
-                        Console.WriteLine($"ModelState Error: {error.ErrorMessage}");
                     }
                 }
             }

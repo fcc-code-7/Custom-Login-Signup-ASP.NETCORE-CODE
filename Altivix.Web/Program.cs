@@ -1,3 +1,4 @@
+using Altivix.Services;
 using Altivix.Web.Data;
 using Altivix.Web.Models;
 using Microsoft.AspNetCore.Identity;
@@ -11,7 +12,7 @@ var connectionString = builder.Configuration.GetConnectionString("default");
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(
     options => options.UseSqlServer(connectionString));
-
+builder.Services.AddScoped<ClientServices, ClientServices>();
 builder.Services.AddIdentity<AppUser, IdentityRole>(
     options =>
     {
@@ -42,5 +43,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+using (var scope = app.Services.CreateScope())
+{
+    await DbSeeder.SeedRolesAndAdminAsync(scope.ServiceProvider);
+}
 app.Run();

@@ -14,6 +14,7 @@ namespace Altivix.Web.ViewModel
         [Required]
         [DataType(DataType.Password)]
         public string? Password { get; set; }
+        [Required(ErrorMessage = "Password don't Match")]  
         [Compare("Password" , ErrorMessage = "Password don't Match")]
         public string? ConfirmPassword { get; set; }
         [Required]
